@@ -6,4 +6,27 @@
 </app-input-binding>
 
 <br />
+<input
+  #nameInput
+  type="text"
+  [ngModel]="name"
+  (ngModelChange)="name = $event"
+/>
+<button (click)="showLast = !showLast">Toggle show last</button>
+<br />
+<br />
+<!-- <app-toggle [checked]="checked" (checkedChange)="checked = $event"></app-toggle> -->
+<!-- toggle la instance cua ToggleComponent (template variables) -->
+<!-- <app-toggle #toggle [(checked)]="checked"></app-toggle> -->
 <app-toggle [(checked)]="checked"></app-toggle>
+<br />
+<app-toggle [(checked)]="checked"></app-toggle>
+<br />
+<app-toggle [(checked)]="checked"></app-toggle>
+<br />
+<ng-container *ngIf="showLast">
+  <app-toggle [(checked)]="checked"></app-toggle>
+</ng-container>
+
+<br />
+<button #toggleBtn>Toggle me</button>
